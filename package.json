@@ -1,0 +1,15 @@
+{
+  "name": "torrent-check",
+  "version": "1.0.0",
+  "description": "",
+  "main": "torrent.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:subgb/torrent-check.git"
+  },
+  "author": "subgb",
+  "license": "ISC"
+}
