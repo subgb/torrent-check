@@ -4,7 +4,7 @@
 
 ## Install
 ```bash
-npm install torrent-check 
+npm install -g torrent-check 
 ```
 
 ## Usage
