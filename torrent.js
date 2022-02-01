@@ -19,6 +19,7 @@ module.exports = class Torrent extends EventEmitter {
 		this.meta = this.parseMeta(this.rawMeta, encoding);
 		this.meta.magnet = `magnet:?xt=urn:btih:${this.infoHash}`;
 		this.meta.torrent = file;
+		this.ext = null;
 		this.validateSchema();
 	}
 
@@ -83,9 +84,13 @@ module.exports = class Torrent extends EventEmitter {
 		let matchedPieces = 0;
 
 		for (const file of files) {
-			const fullpath = path.join(folder, file.path);
+			let fullpath = path.join(folder, file.path);
 			const isLastFile = totalSize+file.length === meta.filesTotalSize;
 			let pieceIndex = Math.floor(totalSize/meta.pieceSize);
+			if (this.ext && !fs.existsSync(fullpath) && fs.existsSync(fullpath+this.ext)) {
+				fullpath += this.ext;
+				file.path += this.ext;
+			}
 			this.emit('file:open', file);
 			try {
 				let piece, readSize;
