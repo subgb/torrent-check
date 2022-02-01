@@ -12,9 +12,12 @@
   "bin": {
     "torrent-check": "checker.js"
   },
+  "files": [
+    "checker.js"
+  ],
   "repository": {
     "type": "git",
-    "url": "git@github.com:subgb/torrent-check.git"
+    "url": "git+https://github.com/subgb/torrent-check.git"
   },
   "author": "subgb",
   "license": "ISC",
@@ -23,5 +26,6 @@
     "chalk": "^4.1.2",
     "iconv-lite": "^0.6.3",
     "yargs": "^15.4.1"
-  }
+  },
+  "homepage": "https://github.com/subgb/torrent-check#readme"
 }
