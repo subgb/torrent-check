@@ -39,10 +39,10 @@ const argv = require('yargs')
 
 startup();
 async function startup() {
-	const torrent = new Torrent(argv._[0], argv.e);
-	if (argv.d) {
-		if (argv.x) torrent.ext = argv.x;
-		const ret = await torrent.checkFilesGraph(argv.d, argv.w);
+	const torrent = new Torrent(argv._[0], argv.encoding);
+	if (argv.dir) {
+		if (argv.ext) torrent.ext = argv.ext;
+		const ret = await torrent.checkFilesGraph(argv.dir, argv.width);
 	}
 	else {
 		console.log(torrent.meta);
